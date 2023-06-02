@@ -16,10 +16,25 @@ public class Library {
     @SequenceGenerator(name = "LIBRARY_ID_GENERATOR", sequenceName = "LIBRARY_ID_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LIBRARY_ID_GENERATOR")
     @Column(name = "ID")
+    //書籍ID
     private Integer id;
 
+    //書籍名
     @Column(name = "NAME")
     private String name;
+
+    @Column(name = "USER_ID")
+    private Integer userId;
+
+    public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+
 
     public Integer getId() {
         return this.id;

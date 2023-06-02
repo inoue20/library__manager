@@ -91,7 +91,7 @@ public class LibraryController {
     @PostMapping("/return")
     public String returnBook(@RequestParam("id") Integer id, @AuthenticationPrincipal LoginUser loginUser) {
     	Library library = libraryService.findById(id).get();
-    	library.setUserId(0);
+    	library.setId(0);
     	libraryService.update(library);
 
     	Log log = logService.findReturnTarget(id,  loginUser.getUser().getId()).get();
